@@ -126,6 +126,9 @@ window.addEventListener('load', ()=>{
                 document.querySelectorAll("ul").forEach((event)=>{
                     event.parentNode.removeChild(event)
                 })
+                document.querySelectorAll("table").forEach((event)=>{
+                    event.parentNode.removeChild(event)
+                })
                 break
             default:
                 falseValue(value)
