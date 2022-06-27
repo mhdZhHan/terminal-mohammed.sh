@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+::-moz-selection {
+  color: #211830;
+  background-color: #519975;
+}
+
+::selection {
+  color: #211830;
+  background-color: #519975;
+}
+
+::-moz-selection {
+  color: #211830;
+  background-color: #519975;
+}
+
+.sursor {
+  font-size: 12px;
+  color: #73ABAD;
+  background-color: #73ABAD;
+  position: relative;
+  opacity: 1;
+  height: 1.5em;
+  width: 10px;
+  max-width: 10px;
+  transform: translateY(4px);
+  overflow: hidden;
+  text-indent: -5px;
+  display: inline-block;
+  text-decoration: blink;
+  -webkit-animation: blinker 1s linear infinite;
+          animation: blinker 1s linear infinite;
+}
+
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+a {
+  color: #9C8394;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+.margin {
+  margin-left: 20px;
+}
+
+.color2 {
+  color: #B89076;
+}
+
+input {
+  background: rgb(35, 38, 39);
+  border: none;
+  outline: none;
+  color: #9C8394;
+  width: 100%;
+  flex-grow: 1;
+  font-size: 16px;
+}
+input:focus {
+  bottom: none;
+  outline: none;
+  box-shadow: none;
+  background: unset;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  background: rgb(35, 38, 39);
+  padding: 0.5rem;
+}
+
+#terminal {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgb(28, 220, 154);
+  padding: 16px;
+  overflow: scroll;
+  cursor: text;
+}
+
+.type {
+  display: flex;
+  align-items: center;
+}
+.type p.path {
+  flex-shrink: 1;
+  margin-right: 8px;
+  font-weight: bolder;
+  color: rgb(28, 220, 154);
+  white-space: nowrap;
+}
+.type p.path span.user {
+  color: rgb(61, 174, 233);
+}
+.type p.path span.at {
+  color: #9C8394;
+}
+.type p.path span.tilde {
+  color: rgb(61, 174, 233);
+}
+.type .input_value {
+  color: #9C8394;
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.type2 {
+  display: flex;
+  align-items: center;
+}
+.type2 p.path {
+  flex-shrink: 1;
+  margin-right: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: rgb(28, 220, 154);
+}
+.type2 p.path span.user {
+  color: rgb(61, 174, 233);
+}
+.type2 p.path span.at {
+  color: #9C8394;
+}
+.type2 p.path span.tilde {
+  color: rgb(61, 174, 233);
+}
+.type2 .input_value {
+  color: #9C8394;
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+table.soft_table {
+  margin: 8px 0;
+  width: 40%;
+  border-collapse: collapse;
+}
+table.soft_table td, table.soft_table th {
+  color: #9C8394;
+  border: 2px dashed #9C8394;
+  padding: 8px;
+}
+table.soft_table th {
+  color: rgb(61, 174, 233);
+}
+@media all and (max-width: 640px) {
+  table.soft_table {
+    width: 100%;
+  }
+}
+
+ul.commands {
+  padding: 5px 20px;
+}
+ul.commands li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+ul.commands li:last-child {
+  margin-bottom: 0;
+}
+ul.commands li span.command {
+  flex: 1;
+  color: rgb(61, 174, 233);
+}
+ul.commands li span.text {
+  flex-grow: 1;
+  flex: 4;
+  position: relative;
+  color: #B89076;
+}
+ul.commands li span.text::before {
+  content: "--";
+  position: absolute;
+  top: -3px;
+  left: -25px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+@media all and (max-width: 760px) {
+  ul.commands li span.text {
+    flex: 2;
+  }
+}
+@media all and (max-width: 480) {
+  ul.commands li span.text {
+    flex: 0;
+  }
+}
+
+p {
+  font-size: 16px;
+  color: #9C8394;
+  padding: 8px 0;
+  line-height: 1.5rem;
+}
+p.command {
+  color: rgb(61, 174, 233);
+  margin-left: 8px;
+}
+
+span.text {
+  margin-left: 16px;
+  color: #B89076;
+}
+
+h2 {
+  font-size: 16px;
+  color: #9C8394;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+$root_color: rgba(28, 220, 154, 1);
+$main_bg: rgba(35, 38, 39, 1);
+// $text_color: rgba(252, 252, 252, 1);
+$text_color: #9C8394;
+$code_color: rgba(61, 174, 233, 1);
+
+@mixin default {
+    font-size: 16px;
+    color: $text_color;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+::selection {
+    color: #211830;
+    background-color: #519975;
+}
+
+::-moz-selection {
+    color: #211830;
+    background-color: #519975;
+}
+
+.sursor {
+    font-size: 12px;
+    color: #73ABAD;
+    background-color: #73ABAD;
+    position: relative;
+    opacity: 1;
+    height: 1.5em;
+    width: 10px;
+    max-width: 10px;
+    transform: translateY(4px);
+    overflow: hidden;
+    text-indent: -5px;
+    display: inline-block;
+    text-decoration: blink;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker{
+    50% {
+        opacity: 0;
+    }
+}
+
+
+a {
+    color: $text_color;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+.margin {
+    margin-left: 20px;
+}
+
+.color2 {
+    color: #B89076;
+}
+
+input {
+    background: $main_bg;
+    border: none;
+    outline: none;
+    color: $text_color;
+    width: 100%;
+    flex-grow: 1;
+    font-size: 16px;
+    &:focus {
+        bottom: none;
+        outline: none;
+        box-shadow: none;
+        background: unset;
+    }
+}
+
+
+#root {
+    width: 100%;
+    height: 100%;
+    background: $main_bg;
+    padding: .5rem;
+}
+
+#terminal {
+    width: 100%;
+    height: 100%;
+    border: 2px solid $root_color;
+    padding: 16px;
+    overflow: scroll;
+    cursor: text;
+}
+
+.type {
+    display: flex;
+    align-items: center;
+    p.path {
+        flex-shrink: 1;
+        margin-right: 8px;
+        font-weight: bolder;
+        color: $root_color;
+        white-space: nowrap;
+        span.user {
+            color: $code_color;
+        }
+        span.at {
+            color: $text_color;
+        }
+        span.tilde {
+            color: $code_color;
+        }
+    }
+    .input_value {
+        color: $text_color;
+        flex-grow: 1;
+        font-size: 16px;
+    }
+}
+
+.type2 {
+    display: flex;
+    align-items: center;
+    p.path {
+        flex-shrink: 1;
+        margin-right: 8px;
+        font-weight: 700;
+        white-space: nowrap;
+        color: $root_color;
+        span.user {
+            color: $code_color;
+        }
+        span.at {
+            color: $text_color;
+        }
+        span.tilde {
+            color: $code_color;
+        }
+    }
+    .input_value {
+        color: $text_color;
+        flex-grow: 1;
+        font-size: 16px;
+    }
+}
+
+table.soft_table {
+    margin: 8px 0;
+    width: 40%;
+    border-collapse: collapse;
+    td,th {
+        color: $text_color;
+        border: 2px dashed $text_color;
+        padding: 8px;
+    }
+    th {
+        color: $code_color;
+    }
+    @media all and(max-width: 640px){
+        width: 100%;
+    }
+}
+
+ul.commands {
+    padding: 5px 20px;
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        span.command {
+            flex: 1;
+            color: $code_color;
+        }
+        span.text {
+            flex-grow: 1;
+            flex: 4;
+            position: relative;
+            color: #B89076;
+            &::before {
+                content: '--';
+                position: absolute;
+                top: -3px;
+                left: -25px;
+                margin-right: 10px;
+                font-size: 20px;
+            }
+            @media all and(max-width: 760px){
+                flex: 2;
+            }
+            @media all and(max-width: 480){
+                flex: 0;
+            }
+        }
+    }
+}
+
+p {
+    @include default;
+    padding: 8px 0;
+    line-height: 1.5rem;
+    &.command {
+        color: $code_color;
+        margin-left:8px;
+    }
+}
+
+span.text{
+    margin-left:16px;
+    // color: $text_color;
+    color: #B89076;
+}
+
+h2 {
+    @include default;
+}
