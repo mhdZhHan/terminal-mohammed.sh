@@ -17,9 +17,6 @@ window.addEventListener('load', ()=>{
     })
 
     async function openTerminal(){
-        // trueValue("start")
-        // createText("Welcome to my terminal")
-        // await delay(500)
         createText("Starting server...")
         await delay(500)
         createText("You can give different commands")
@@ -75,6 +72,10 @@ window.addEventListener('load', ()=>{
                 createText("Hi ! I'm Mohammed 👋", "line_height")
                 createText("A 21st century kid, Mostly hacks on FOSS enthusiast, GNU/Linux user, Blogger & Noob Programer :)", "line_height")
                 break
+            case "whoami":
+                trueValue(value)
+                createText("The paradox of “Who am I?” is: we never know, but, we constantly find out.", "line_height")
+                break
             case "secret":
                 trueValue(value)
                 addCommand("sudo", "Only use if you\'re admin")
@@ -86,6 +87,11 @@ window.addEventListener('load', ()=>{
             case "contact":
                 trueValue(value)
                 createText("Contact me own the way.. soon")
+                break
+            case "email":
+                trueValue(value)
+                createText("Opening mailto: hello.mohammedshajahan@gmail.com")
+                newTab("mailto:hello.mohammedshajahan@gmail.com")
                 break
             case "website":
                 trueValue(value)
@@ -115,6 +121,16 @@ window.addEventListener('load', ()=>{
                 trueValue(value)
                 createText("Opening Twitter...")
                 newTab("https://twiter.com/_mohammedsh7/")
+                break
+            case "linkedin":
+                trueValue(value)
+                createText("Opening Linkedin...")
+                newTab("https://www.linkedin.com/in/mohammedshajahan/")
+                break
+            case "telegram":
+                trueValue(value)
+                createText("Opening Telegram...")
+                newTab("https://t.me/mohammed_shajahan")
                 break
             case "clear":
                 clearTerminal("p")
@@ -155,7 +171,6 @@ window.addEventListener('load', ()=>{
         const p = document.createElement("p")
         p.setAttribute("class", "path")
     
-        // let path = `[guest@mohammed.sh <span class="tilde">~</span>]$`
         let path = `[<span class="user">guest</span><span class="at">@</span>mohammed.sh<span class="tilde"> ~</span>]$`
         p.innerHTML = path
     
@@ -202,23 +217,26 @@ window.addEventListener('load', ()=>{
         APP.appendChild(ul)
     }
 
+    // createTable for list projects
     function createTable(command){
         const table = document.createElement("table")
         table.setAttribute("class", "soft_table")
+
+        // table head start
         const thead = document.createElement("thead")
         const trhead = document.createElement("tr")
-        const tbody = document.createElement("tbody")
-
         const theadValues = ["Name", "Source", "Live"]
         theadValues.forEach((item)=>{
             const th = document.createElement("th")
             th.textContent = item
             trhead.appendChild(th)
         })
-
         thead.appendChild(trhead)
         table.appendChild(thead)
+        // table head end
 
+        // table body start
+        const tbody = document.createElement("tbody")
         command.forEach((item)=>{
             const trbody = document.createElement("tr")
             trbody.innerHTML = `
@@ -231,6 +249,24 @@ window.addEventListener('load', ()=>{
             tbody.appendChild(trbody)
         })
         table.appendChild(tbody)
+        // table body end
+
+        // table footer start
+        const tfoot = document.createElement("tfoot")
+        const trtfoot = document.createElement("tr")
+        const tdtfoot = document.createElement("td")
+        const attributes = {
+            colspan: "3",
+            class: "line_height",
+            style: "text-align: center;",
+        }
+        Object.keys(attributes).forEach(attr => tdtfoot.setAttribute(attr, attributes[attr]))
+        tdtfoot.textContent = "Still curating... most projects are offline, on Gitlab, GitHub, or confidential."
+        trtfoot.appendChild(tdtfoot)
+        tfoot.appendChild(trtfoot)
+        table.appendChild(tfoot)
+        // table footer end
+
         APP.appendChild(table)
     }
 
