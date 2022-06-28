@@ -72,8 +72,8 @@ window.addEventListener('load', ()=>{
                 break
             case "about":
                 trueValue(value)
-                createText("Hi ! I'm Mohammed 👋")
-                createText("A 21st century kid, Mostly hacks on FOSS enthusiast, GNU/Linux user, Blogger & Noob Programer :)")
+                createText("Hi ! I'm Mohammed 👋", "line_height")
+                createText("A 21st century kid, Mostly hacks on FOSS enthusiast, GNU/Linux user, Blogger & Noob Programer :)", "line_height")
                 break
             case "secret":
                 trueValue(value)
@@ -187,6 +187,7 @@ window.addEventListener('load', ()=>{
 
     function createText(text, classname){
         const p = document.createElement("p")
+        p.setAttribute("class", classname ? classname: "")
         p.innerHTML = text
         APP.appendChild(p)
     }
@@ -212,25 +213,32 @@ window.addEventListener('load', ()=>{
     function createTable(command){
         const table = document.createElement("table")
         table.setAttribute("class", "soft_table")
-        command.forEach((item)=>{
-            tableData = `
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Source</th>
-                        <th>Live</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>${item.name}</td>
-                        <td>${item.source}</td>
-                        <td>${item.live}</td>
-                    </tr>
-                </tbody>
-            `
-            table.innerHTML = tableData
+        const thead = document.createElement("thead")
+        const trhead = document.createElement("tr")
+        const tbody = document.createElement("tbody")
+
+        const theadValues = ["Name", "Source", "Live"]
+        theadValues.forEach((item)=>{
+            const th = document.createElement("th")
+            th.textContent = item
+            trhead.appendChild(th)
         })
+
+        thead.appendChild(trhead)
+        table.appendChild(thead)
+
+        command.forEach((item)=>{
+            const trbody = document.createElement("tr")
+            trbody.innerHTML = `
+                <tr>
+                    <td>${item.name}</td>
+                    <td>${item.source}</td>
+                    <td>${item.live}</td>
+                </tr>
+            `
+            tbody.appendChild(trbody)
+        })
+        table.appendChild(tbody)
         APP.appendChild(table)
     }
 

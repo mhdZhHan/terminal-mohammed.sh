@@ -9,6 +9,9 @@ $code_color: rgba(61, 174, 233, 1);
 @mixin default {
     font-size: 16px;
     color: $text_color;
+    @media all and(max-width: 380px){
+        font-size: 14px;
+    }
 }
 
 * {
@@ -23,6 +26,10 @@ html {
 
 ul {
     list-style: none;
+}
+
+.line_height {
+    line-height: 1.5rem;
 }
 
 ::selection {
@@ -69,14 +76,6 @@ body {
     overflow: hidden;
 }
 
-.margin {
-    margin-left: 20px;
-}
-
-.color2 {
-    color: #B89076;
-}
-
 input {
     background: $main_bg;
     border: none;
@@ -91,6 +90,9 @@ input {
         box-shadow: none;
         background: unset;
     }
+    @media all and(max-width: 380px){
+        font-size: 14px;
+    }
 }
 
 
@@ -99,6 +101,9 @@ input {
     height: 100%;
     background: $main_bg;
     padding: .5rem;
+    @media all and(max-width: 380px){
+        padding: .4rem;
+    }
 }
 
 #terminal {
@@ -108,6 +113,9 @@ input {
     padding: 16px;
     overflow: scroll;
     cursor: text;
+    @media all and(max-width: 380px){
+        padding: .4rem;
+    }
 }
 
 .type {
@@ -116,23 +124,29 @@ input {
     p.path {
         flex-shrink: 1;
         margin-right: 8px;
-        font-weight: bolder;
+        font-weight: 700;
         color: $root_color;
         white-space: nowrap;
         span.user {
             color: $code_color;
+            font-weight: 700;
         }
         span.at {
             color: $text_color;
+            font-weight: 700;
         }
         span.tilde {
             color: $code_color;
+            font-weight: 700;
         }
     }
     .input_value {
         color: $text_color;
         flex-grow: 1;
         font-size: 16px;
+        @media all and(max-width: 380px){
+            font-size: 14px;
+        }
     }
 }
 
@@ -159,6 +173,9 @@ input {
         color: $text_color;
         flex-grow: 1;
         font-size: 16px;
+        @media all and(max-width: 380px){
+            font-size: 14px;
+        }
     }
 }
 
@@ -173,6 +190,9 @@ table.soft_table {
     }
     th {
         color: $code_color;
+        @media all and(max-width: 380px){
+            font-size: 14px;
+        }
     }
     @media all and(max-width: 640px){
         width: 100%;
@@ -180,11 +200,17 @@ table.soft_table {
 }
 
 ul.commands {
-    padding: 5px 20px;
+    padding: 8px 20px;
+    @media all and(max-width: 380px){
+        padding: 8px 16px;
+    }
     li {
         display: flex;
         align-items: center;
         margin-bottom: 5px;
+        @media all and(max-width: 380px){
+            font-size: 14px;
+        }
         &:last-child {
             margin-bottom: 0;
         }
@@ -204,6 +230,9 @@ ul.commands {
                 left: -25px;
                 margin-right: 10px;
                 font-size: 20px;
+                @media all and(max-width: 380px){
+                    left: -18px;
+                }
             }
             @media all and(max-width: 760px){
                 flex: 2;
@@ -218,7 +247,6 @@ ul.commands {
 p {
     @include default;
     padding: 8px 0;
-    line-height: 1.5rem;
     &.command {
         color: $code_color;
         margin-left:8px;

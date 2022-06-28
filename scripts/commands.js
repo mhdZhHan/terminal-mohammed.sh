@@ -24,18 +24,6 @@ window.addEventListener('load', ()=>{
 			"source": "<a href=\"https://github.com/mohammedshajahan7/moke-travel\">Github</a>",
 			"live": "<a href=\"https://github.com/mohammedshajahan7/moke-travel\">Demo</a>"
 		},
-		{
-			"id": 3,
-			"name": "Moke travel",
-			"source": "<a href=\"https://github.com/mohammedshajahan7/moke-travel\">Github</a>",
-			"live": "<a href=\"https://github.com/mohammedshajahan7/moke-travel\">Demo</a>"
-		},
-		{
-			"id": 4,
-			"name": "Moke travel",
-			"source": "<a href=\"https://github.com/mohammedshajahan7/moke-travel\">Github</a>",
-			"live": "<a href=\"https://github.com/mohammedshajahan7/moke-travel\">Demo</a>"
-		},
 	]
 
 	help = [
