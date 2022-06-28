@@ -117,18 +117,10 @@ window.addEventListener('load', ()=>{
                 newTab("https://twiter.com/_mohammedsh7/")
                 break
             case "clear":
-                document.querySelectorAll("p").forEach((event)=>{
-                  event.parentNode.removeChild(event)
-                })
-                document.querySelectorAll("section").forEach((event)=>{
-                    event.parentNode.removeChild(event)
-                })
-                document.querySelectorAll("ul").forEach((event)=>{
-                    event.parentNode.removeChild(event)
-                })
-                document.querySelectorAll("table").forEach((event)=>{
-                    event.parentNode.removeChild(event)
-                })
+                clearTerminal("p")
+                clearTerminal("section")
+                clearTerminal("ul")
+                clearTerminal("table")
                 break
             default:
                 falseValue(value)
@@ -240,6 +232,12 @@ window.addEventListener('load', ()=>{
         })
         table.appendChild(tbody)
         APP.appendChild(table)
+    }
+
+    function clearTerminal(element){
+        document.querySelectorAll(element).forEach((event)=>{
+            event.parentNode.removeChild(event)
+        })
     }
 
     openTerminal()
