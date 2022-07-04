@@ -59,6 +59,7 @@ window.addEventListener('load', ()=>{
             case "banner":
                 trueValue(value)
                 createText("404 banner not found. :)")
+                break
             case "help":
                 trueValue(value)
                 createList(help)
